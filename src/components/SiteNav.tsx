@@ -25,7 +25,7 @@ export function SiteNav() {
                 {l.label}
               </a>
             ) : (
-              <Link key={l.to} to={l.to} className="hover:text-coral transition-colors">
+              <Link key={l.to} to={l.to as string} className="hover:text-coral transition-colors">
                 {l.label}
               </Link>
             ),
@@ -53,7 +53,7 @@ export function SiteNav() {
                 {l.label}
               </a>
             ) : (
-              <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>
+              <Link key={l.to} to={l.to as string} onClick={() => setOpen(false)}>
                 {l.label}
               </Link>
             ),
