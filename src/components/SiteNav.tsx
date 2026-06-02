@@ -1,11 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-const links = [
+type NavLink = { to: string; label: string; hash?: boolean };
+
+const links: NavLink[] = [
   { to: "/activiteiten", label: "Activiteiten" },
   { to: "/arrangementen", label: "Arrangementen" },
   { to: "/#proeftuin", label: "ProefTuin", hash: true },
-] as const;
+];
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
