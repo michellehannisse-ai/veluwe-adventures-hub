@@ -39,7 +39,7 @@ export const Route = createFileRoute("/arrangementen/$slug")({
 
 function ArrangementDetail() {
   const { arr } = Route.useLoaderData();
-  const accent = accentMap[arr.accent];
+  const accent = accentMap[arr.accent as keyof typeof accentMap];
   const others = arrangementen.filter((o) => o.slug !== arr.slug);
 
   return (
@@ -80,7 +80,7 @@ function ArrangementDetail() {
             <div className="bg-white border-2 border-ink rounded-2xl p-6 mb-8">
               <h2 className="text-xl font-display font-bold uppercase mb-4">Inbegrepen</h2>
               <ul className="space-y-3">
-                {arr.includes.map((h) => (
+                {arr.includes.map((h: string) => (
                   <li key={h} className="flex items-start gap-3">
                     <span className="size-3 mt-2 rounded-full bg-pink border border-ink" />
                     <span className="font-medium">{h}</span>

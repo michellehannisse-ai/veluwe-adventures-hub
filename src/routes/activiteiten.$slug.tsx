@@ -83,7 +83,7 @@ function ActivityDetail() {
             <div className="mb-10">
               <h2 className="text-xl font-display font-bold uppercase mb-4">Wat je krijgt</h2>
               <ul className="space-y-3">
-                {a.highlights.map((h) => (
+                {a.highlights.map((h: string) => (
                   <li key={h} className="flex items-start gap-3">
                     <span className="size-3 mt-2 rounded-full bg-coral border border-ink" />
                     <span className="font-medium">{h}</span>
