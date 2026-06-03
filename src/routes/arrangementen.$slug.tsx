@@ -77,7 +77,7 @@ function ArrangementDetail() {
             <p className="text-xl font-serif italic text-ink/70 mb-6">{arr.tagline}</p>
             <p className="text-lg text-ink/80 mb-8">{arr.description}</p>
 
-            <div className="bg-white border-2 border-ink rounded-2xl p-6 mb-8">
+            <div className="bg-white border-2 border-ink rounded-2xl p-6 mb-6">
               <h2 className="text-xl font-display font-bold uppercase mb-4">Inbegrepen</h2>
               <ul className="space-y-3">
                 {arr.includes.map((h: string) => (
@@ -88,6 +88,20 @@ function ArrangementDetail() {
                 ))}
               </ul>
             </div>
+
+            {arr.options && arr.options.length > 0 && (
+              <div className="bg-cream border-2 border-ink rounded-2xl p-6 mb-8">
+                <h2 className="text-xl font-display font-bold uppercase mb-4">Opties & extra's</h2>
+                <ul className="space-y-2 text-sm">
+                  {arr.options.map((o: string) => (
+                    <li key={o} className="flex items-start gap-2">
+                      <span className="size-2 mt-1.5 rounded-full bg-coral border border-ink shrink-0" />
+                      <span>{o}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-3">
               <Link
