@@ -1,5 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { activities, getActivity } from "@/lib/activities";
+import { FAQ } from "@/components/FAQ";
+import { activityFaqs } from "@/lib/faqs";
 
 export const Route = createFileRoute("/activiteiten/$slug")({
   loader: ({ params }) => {
@@ -34,82 +36,128 @@ export const Route = createFileRoute("/activiteiten/$slug")({
 function ActivityDetail() {
   const { activity: a } = Route.useLoaderData();
   const others = activities.filter((o) => o.slug !== a.slug);
+  const faqs = activityFaqs[a.slug] ?? [];
 
   return (
-    <div className="pt-32 pb-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <Link
-          to="/activiteiten"
-          className="inline-block mb-8 text-sm font-bold uppercase tracking-wide border-2 border-ink rounded-full px-4 py-1.5 hover:bg-ink hover:text-cream transition-colors"
-        >
-          ← Alle activiteiten
-        </Link>
+    <>
+      <div className="pt-32 pb-24 px-6 bg-cream">
+        <div className="max-w-6xl mx-auto">
+          <Link
+            to="/activiteiten"
+            className="inline-block mb-8 text-sm font-bold uppercase tracking-wide border-2 border-ink rounded-full px-4 py-1.5 hover:bg-ink hover:text-cream transition-colors"
+          >
+            ← Alle activiteiten
+          </Link>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="relative">
-            <div className="border-2 border-ink rounded-[2rem] overflow-hidden shadow-[12px_12px_0px_0px_var(--color-coral)]">
-              <img
-                src={a.image}
-                alt={a.name}
-                width={800}
-                height={800}
-                className="w-full aspect-square object-cover"
-              />
-            </div>
-            <div className={`absolute -top-6 -right-6 ${a.badgeBg} ${a.badgeText} border-2 border-ink px-5 py-3 rounded-2xl rotate-6 shadow-xl`}>
-              <div className="font-display text-3xl leading-none tracking-tighter">{a.price}</div>
-              <div className="text-xs font-bold uppercase tracking-widest">{a.priceLabel}</div>
-            </div>
-          </div>
-
-          <div>
-            <span className="font-script text-2xl text-coral">Compass Challenge</span>
-            <h1 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter leading-none mt-1 mb-6">
-              {a.name}
-            </h1>
-            <p className="text-lg text-ink/80 mb-8">{a.description}</p>
-
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="border-2 border-ink rounded-2xl p-4">
-                <div className="text-xs font-bold uppercase text-ink/50">Duur</div>
-                <div className="font-display text-xl uppercase">{a.duration}</div>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div className="relative">
+              <div className="border-2 border-ink rounded-[2rem] overflow-hidden shadow-[12px_12px_0px_0px_var(--color-coral)]">
+                <img
+                  src={a.image}
+                  alt={a.name}
+                  width={800}
+                  height={800}
+                  className="w-full aspect-square object-cover"
+                />
               </div>
-              <div className="border-2 border-ink rounded-2xl p-4">
-                <div className="text-xs font-bold uppercase text-ink/50">Groep</div>
-                <div className="font-display text-xl uppercase">{a.groupSize}</div>
-              </div>
+              {a.showPrice && (
+                <div
+                  className={`absolute -top-6 -right-6 ${a.badgeBg} ${a.badgeText} border-2 border-ink px-5 py-3 rounded-2xl rotate-6 shadow-xl`}
+                >
+                  <div className="font-display text-3xl leading-none tracking-tighter">
+                    {a.price}
+                  </div>
+                  <div className="text-xs font-bold uppercase tracking-widest">{a.priceLabel}</div>
+                </div>
+              )}
+
+              {a.gallery && a.gallery.length > 0 && (
+                <div className="grid grid-cols-2 gap-3 mt-4">
+                  {a.gallery.map((g, i) => (
+                    <div
+                      key={i}
+                      className="border-2 border-ink rounded-2xl overflow-hidden"
+                    >
+                      <img
+                        src={g}
+                        alt=""
+                        loading="lazy"
+                        className="w-full aspect-[4/3] object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div className="mb-10">
-              <h2 className="text-xl font-display font-bold uppercase mb-4">Wat je krijgt</h2>
-              <ul className="space-y-3">
-                {a.highlights.map((h: string) => (
-                  <li key={h} className="flex items-start gap-3">
-                    <span className="size-3 mt-2 rounded-full bg-coral border border-ink" />
-                    <span className="font-medium">{h}</span>
-                  </li>
+            <div>
+              <span className="font-script text-2xl text-coral">Compass Challenge</span>
+              <h1 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter leading-none mt-1 mb-6">
+                {a.name}
+              </h1>
+              <p className="text-lg text-ink/80 mb-8">{a.description}</p>
+
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {a.practical.map((p) => (
+                  <div key={p.label} className="border-2 border-ink rounded-2xl p-4">
+                    <div className="text-xs font-bold uppercase text-ink/50">{p.label}</div>
+                    <div className="font-display text-lg uppercase leading-tight">{p.value}</div>
+                  </div>
                 ))}
-              </ul>
-            </div>
+              </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="bg-teal text-cream border-2 border-ink px-6 py-3 rounded-full font-bold uppercase shadow-[6px_6px_0px_0px_var(--color-ink)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_var(--color-ink)] transition-all"
-              >
-                Boek deze challenge
-              </Link>
-              <Link
-                to="/arrangementen"
-                className="border-2 border-ink px-6 py-3 rounded-full font-bold uppercase hover:bg-ink hover:text-cream transition-colors"
-              >
-                Of als arrangement →
-              </Link>
+              <div className="mb-10">
+                <h2 className="text-xl font-display font-bold uppercase mb-4">Wat je krijgt</h2>
+                <ul className="space-y-3">
+                  {a.highlights.map((h: string) => (
+                    <li key={h} className="flex items-start gap-3">
+                      <span className="size-3 mt-2 rounded-full bg-coral border border-ink" />
+                      <span className="font-medium">{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                {a.primaryCta.external ? (
+                  <a
+                    href={a.primaryCta.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="bg-teal text-cream border-2 border-ink px-6 py-3 rounded-full font-bold uppercase shadow-[6px_6px_0px_0px_var(--color-ink)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_var(--color-ink)] transition-all"
+                  >
+                    {a.primaryCta.label} ↗
+                  </a>
+                ) : (
+                  <Link
+                    to={a.primaryCta.href}
+                    className="bg-teal text-cream border-2 border-ink px-6 py-3 rounded-full font-bold uppercase shadow-[6px_6px_0px_0px_var(--color-ink)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_var(--color-ink)] transition-all"
+                  >
+                    {a.primaryCta.label}
+                  </Link>
+                )}
+                {a.secondaryCta && (
+                  <Link
+                    to={a.secondaryCta.href}
+                    className="border-2 border-ink px-6 py-3 rounded-full font-bold uppercase hover:bg-ink hover:text-cream transition-colors"
+                  >
+                    {a.secondaryCta.label}
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-24">
+      {/* FAQ */}
+      {faqs.length > 0 && (
+        <FAQ kicker="Vragen over deze challenge —" title="Veelgestelde vragen" faqs={faqs} />
+      )}
+
+      {/* Others */}
+      <div className="bg-cream py-24 px-6">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-display font-bold uppercase mb-8">Andere challenges</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {others.map((o) => (
@@ -131,13 +179,17 @@ function ActivityDetail() {
                 <div className="flex-1">
                   <div className="font-display font-bold uppercase">{o.name}</div>
                   <div className="text-xs text-ink/60 mt-1 line-clamp-2">{o.short}</div>
-                  <div className="mt-2 text-sm font-bold">{o.price} {o.priceLabel}</div>
+                  {o.showPrice && (
+                    <div className="mt-2 text-sm font-bold">
+                      {o.price} {o.priceLabel}
+                    </div>
+                  )}
                 </div>
               </Link>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
