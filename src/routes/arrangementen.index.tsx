@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { arrangementen } from "@/lib/arrangementen";
-import arrangementenImg from "@/assets/arrangementen.jpg";
+import arrangementenImg from "@/assets/proeftuin.jpg.asset.json";
 
 const accentMap = {
   teal: { bg: "bg-teal", text: "text-cream", shadow: "var(--color-coral)" },
@@ -15,13 +15,13 @@ export const Route = createFileRoute("/arrangementen/")({
       {
         name: "description",
         content:
-          "Arrangementen vanaf 8 personen: activiteit, Italiaans diner en drankjes bij De ProefTuin in Hoenderloo.",
+          "Arrangementen vanaf 8 personen: een Compass Challenge gecombineerd met BBQ, pizza buffet of lunch & borrel bij De ProefTuin Hoenderloo.",
       },
       { property: "og:title", content: "Arrangementen — Spot de Veluwe" },
       {
         property: "og:description",
         content:
-          "Bedrijfsuitje, familiefeest of vriendendag? Wij stellen een arrangement op maat samen vanaf 8 personen.",
+          "Bedrijfsuitje, familiefeest of vriendenweekend? Combineer een challenge op de Veluwe met een Italiaanse maaltijd bij De ProefTuin.",
       },
     ],
   }),
@@ -37,19 +37,16 @@ function ArrangementenIndex() {
             <span className="font-script text-3xl text-pink">Vanaf 8 personen —</span>
             <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter leading-none mt-2 mb-6">
               Samen op{" "}
-              <span className="font-serif italic font-normal lowercase text-teal">
-                avontuur
-              </span>
+              <span className="font-serif italic font-normal lowercase text-teal">avontuur</span>
             </h1>
             <p className="text-lg text-ink/80">
-              Bedrijfsuitje, familiefeest of vriendenweekend? Wij combineren een
-              challenge op de Veluwe met een heerlijke Italiaanse maaltijd bij De
-              ProefTuin. Alles in één regel — jullie genieten.
+              Bedrijfsuitje, familiefeest of vriendenweekend? Combineer een challenge op de Veluwe
+              met een heerlijke Italiaanse maaltijd bij De ProefTuin.
             </p>
           </div>
           <div className="border-2 border-ink rounded-[2rem] overflow-hidden shadow-[10px_10px_0px_0px_var(--color-coral)]">
             <img
-              src={arrangementenImg}
+              src={arrangementenImg.url}
               alt="Groep vrienden bij De ProefTuin"
               width={1280}
               height={896}
@@ -74,7 +71,7 @@ function ArrangementenIndex() {
                   <div className="text-xs uppercase tracking-widest font-bold opacity-80">
                     Arrangement
                   </div>
-                  <div className="font-display text-xl uppercase">{arr.price}</div>
+                  <div className="font-display text-base uppercase leading-tight">{arr.price}</div>
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <h2 className="text-2xl font-display font-bold uppercase mb-2">{arr.name}</h2>
@@ -101,8 +98,7 @@ function ArrangementenIndex() {
             Iets anders in gedachten?
           </h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-            Met onze offerte-tool stel je je eigen arrangement samen op maat. Wij
-            denken graag mee.
+            Met onze offerte-tool stel je je eigen arrangement samen op maat. Wij denken graag mee.
           </p>
           <Link
             to="/contact"

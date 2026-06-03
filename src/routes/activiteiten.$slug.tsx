@@ -73,7 +73,7 @@ function ActivityDetail() {
 
               {a.gallery && a.gallery.length > 0 && (
                 <div className="grid grid-cols-2 gap-3 mt-4">
-                  {a.gallery.map((g, i) => (
+                  {a.gallery.map((g: string, i: number) => (
                     <div
                       key={i}
                       className="border-2 border-ink rounded-2xl overflow-hidden"
@@ -98,7 +98,7 @@ function ActivityDetail() {
               <p className="text-lg text-ink/80 mb-8">{a.description}</p>
 
               <div className="grid grid-cols-2 gap-3 mb-8">
-                {a.practical.map((p) => (
+                {a.practical.map((p: { label: string; value: string }) => (
                   <div key={p.label} className="border-2 border-ink rounded-2xl p-4">
                     <div className="text-xs font-bold uppercase text-ink/50">{p.label}</div>
                     <div className="font-display text-lg uppercase leading-tight">{p.value}</div>
