@@ -1,5 +1,6 @@
-import arrangementenImg from "@/assets/arrangementen.jpg";
-import proeftuinImg from "@/assets/proeftuin.jpg";
+import proeftuinImg from "@/assets/proeftuin.jpg.asset.json";
+import chopperImg from "@/assets/activity-chopper.jpg.asset.json";
+import autoImg from "@/assets/activity-auto.jpg.asset.json";
 
 export type Arrangement = {
   slug: string;
@@ -7,6 +8,7 @@ export type Arrangement = {
   tagline: string;
   price: string;
   includes: string[];
+  options?: string[];
   description: string;
   image: string;
   accent: "teal" | "coral" | "pink";
@@ -14,51 +16,67 @@ export type Arrangement = {
 
 export const arrangementen: Arrangement[] = [
   {
-    slug: "chopper-arrangement",
-    name: "Chopper Arrangement",
-    tagline: "Avontuur op twee wielen + Italiaans tafelen",
-    price: "v.a. €67,50 p.p.",
+    slug: "tour-en-bbq",
+    name: "Tour & BBQ",
+    tagline: "Challenge op de Veluwe + Italiaanse BBQ",
+    price: "v.a. €30 p.p. (BBQ, excl. challenge)",
     includes: [
-      "Welkomstdrankje bij De ProefTuin",
-      "Chopper Compass Challenge (± 2 uur)",
-      "Italiaanse 3-gangen pizza- of pastakeuze",
-      "Koffie of espresso na",
+      "Keuze uit Chopper, Auto of Wandel Compass Challenge",
+      "BBQ-buffet bij De ProefTuin",
+      "Goed gevulde salades, gemarineerde krieltjes, vers brood en sauzen",
+      "Ready-to-use kolen BBQ",
+    ],
+    options: [
+      "Standaard BBQ €30 · Medium €35 · Luxe €40",
+      "Luxe vispakket €40 · Surf & Turf €37,50",
+      "Kinderpakket €15",
+      "Zelf bbq'en of master chef inhuren",
     ],
     description:
-      "Het stoerste arrangement voor bedrijfsuitjes, vrijgezellenfeesten of een dagje uit met vrienden. Eerst de Veluwe veroveren op de E-chopper en daarna heerlijk natafelen bij De ProefTuin. Vanaf 8 personen samen te stellen.",
-    image: arrangementenImg,
+      "Het uitje voor echte fijnproevers. Eerst de Veluwe veroveren met een challenge, daarna gezellig aanschuiven voor een uitgebreide BBQ bij De ProefTuin. Kies zelf het BBQ-pakket dat bij je groep past — van Standaard tot Luxe vis of Surf & Turf. Zelf bbq'en kan, maar je kunt ook een master chef inhuren.",
+    image: chopperImg.url,
     accent: "teal",
   },
   {
-    slug: "auto-arrangement",
-    name: "Auto Arrangement",
-    tagline: "Op expeditie en daarna aanschuiven",
-    price: "v.a. €49,50 p.p.",
+    slug: "tour-en-pizza-buffet",
+    name: "Tour & Pizza Buffet",
+    tagline: "Challenge + onbeperkt pizza uit de houtoven",
+    price: "Op aanvraag — offerte op maat",
     includes: [
-      "Welkomstdrankje bij De ProefTuin",
-      "Auto Compass Challenge (± 2,5 uur)",
-      "Italiaanse 3-gangen keuze",
-      "Koffie of espresso na",
+      "Keuze uit Chopper, Auto of Wandel Compass Challenge",
+      "Vers vegetarisch soepje vooraf",
+      "Onbeperkt pizza's uit de houtoven (vlees, vis of vegetarisch)",
+      "Focaccia, bruchetta en rijke salades",
+    ],
+    options: [
+      "Trots op een 4e plek NK Pizzabakken 2025",
+      "Pizza naar wens bij te bestellen",
+      "Drankafkoop optioneel (3 uur €22,50 p.p.)",
     ],
     description:
-      "Perfect voor families, vriendengroepen of collega's. Met je eigen auto's vormen jullie teams en gaan de Veluwe verkennen. Na afloop schuiven jullie aan voor een heerlijke Italiaanse maaltijd bij De ProefTuin.",
-    image: proeftuinImg,
+      "Pizza: dat lust bijna iedereen. De ProefTuin staat bekend om zijn vers gebakken pizza's uit de authentieke houtoven — niet voor niks behaalden ze een 4e plek op het NK Pizzabakken 2025. Combineer een challenge over de Veluwe met onbeperkt pizza, salades en heerlijke voorgerechten.",
+    image: proeftuinImg.url,
     accent: "coral",
   },
   {
-    slug: "wandel-arrangement",
-    name: "Wandel Arrangement",
-    tagline: "Wandelen, ontdekken en samen tafelen",
-    price: "v.a. €34,50 p.p.",
+    slug: "lunch-challenge-en-borrel",
+    name: "Lunch, Challenge & Borrel",
+    tagline: "Italiaanse lunch · actief uitje · gezellige borrel",
+    price: "v.a. €26,50 p.p. (lunch, excl. challenge & borrel)",
     includes: [
-      "Welkomstdrankje bij De ProefTuin",
-      "Wandel Compass Challenge (± 2 uur)",
-      "Italiaanse 3-gangen keuze",
-      "Koffie of espresso na",
+      "Italiaanse lunch met huisgemaakte broodjes (vlees, vis, vegetarisch)",
+      "Vers gebakken croissants, fruit, salades en soep",
+      "Keuze uit Chopper, Auto of Wandel Compass Challenge",
+      "Borrelafkoop bij terugkomst (optioneel)",
+    ],
+    options: [
+      "Drankafkoop lunch (2 uur): €11,50 p.p.",
+      "Borrelafkoop 3 uur: €22,50 p.p. (extra uur €5 p.p.)",
+      "Kindertarief lunch (4–12 jr): €15 p.p.",
     ],
     description:
-      "Het meest toegankelijke arrangement, voor alle leeftijden. Een mooie wandeling met kompas en opdrachten door de Veluwse natuur, gevolgd door een gezellig diner bij De ProefTuin.",
-    image: arrangementenImg,
+      "Perfect voor een complete dag uit. Start gezellig met een uitgebreide Italiaanse lunch — precies zoals de Italianen het doen. Daarna actief de Veluwe in met een challenge naar keuze. En bij terugkomst nog even napraten onder het genot van een drankje op het Veluwse terras.",
+    image: autoImg.url,
     accent: "pink",
   },
 ];

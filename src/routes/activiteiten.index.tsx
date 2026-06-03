@@ -26,15 +26,13 @@ function ActiviteitenIndex() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 max-w-3xl">
           <span className="font-script text-3xl text-coral">Kies je avontuur —</span>
-          <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter leading-none mt-2 mb-6">
-            Onze{" "}
-            <span className="font-serif italic font-normal lowercase text-teal">
-              Challenges
-            </span>
+          <h1 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter leading-none mt-2 mb-6">
+            Leuk.
           </h1>
           <p className="text-lg text-ink/80">
-            Drie manieren om de Veluwe te veroveren. Allemaal starten ze bij De
-            ProefTuin in Hoenderloo. Kompas mee, hersens aan, ga!
+            Met diverse leuke challenges dagen we jou uit een leuke dag op de Veluwe te hebben! Met
+            al onze uitjes ben je actief bezig met zijn allen. Alle uitjes starten en eindigen bij
+            De ProefTuin in Hoenderloo. Hier kan je de auto gemakkelijk parkeren. Let's go!
           </p>
         </div>
 
@@ -65,7 +63,10 @@ function ActiviteitenIndex() {
                 </div>
               </div>
               <h2 className="text-2xl font-display font-bold uppercase mb-2">{a.name}</h2>
-              <p className="text-sm text-ink/70 mb-6">{a.short}</p>
+              <p className="text-sm text-ink/70 mb-3">{a.short}</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-teal mb-6">
+                {a.metaLine}
+              </p>
               <span className="block w-full text-center border-2 border-ink rounded-full py-2 font-bold uppercase text-xs group-hover:bg-teal group-hover:text-cream transition-colors">
                 Meer Info
               </span>

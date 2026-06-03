@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroChopper from "@/assets/hero-chopper.jpg";
-import proeftuinImg from "@/assets/proeftuin.jpg";
+import heroChopper from "@/assets/hero-chopper.jpg.asset.json";
+import proeftuinImg from "@/assets/proeftuin.jpg.asset.json";
 import { activities } from "@/lib/activities";
+import { FAQ } from "@/components/FAQ";
+import { homeFaqs } from "@/lib/faqs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,14 +32,15 @@ function Home() {
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1 animate-entrance">
-            <h1 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter uppercase mb-6">
-              Spot de <br />
+            <h1 className="text-5xl md:text-7xl font-display font-bold leading-[0.95] tracking-tighter uppercase mb-6">
+              Spot de{" "}
               <span className="font-serif italic font-normal lowercase text-coral">Veluwe</span>{" "}
-              op wielen
+              en ga mee op ontdekking
             </h1>
             <p className="max-w-md text-lg font-medium mb-8 text-ink/80">
-              Ontdek de ruige natuur van de Veluwe vanaf De ProefTuin in Hoenderloo.
-              Kies je challenge en ga op avontuur — alleen, met vrienden of als groep.
+              Ontdek de gave omgeving van Hoenderloo met onze activiteiten en ga samen op pad.
+              Combineer het met heerlijk eten voorafgaand of na de activiteit. Jouw volgende
+              bedrijfsuitje, familie&shy;uitje of vriendenuitje?
             </p>
             <div className="relative inline-block">
               <span className="absolute -top-10 -left-6 font-script text-3xl text-pink -rotate-12">
@@ -54,16 +57,16 @@ function Home() {
           <div className="flex-1 relative animate-entrance" style={{ animationDelay: "150ms" }}>
             <div className="border-2 border-ink rounded-[2rem] overflow-hidden shadow-[12px_12px_0px_0px_var(--color-coral)]">
               <img
-                src={heroChopper}
-                alt="Vintage chopper op een Veluws bospad"
-                width={1024}
+                src={heroChopper.url}
+                alt="Groep gasten met helmen lacht tijdens een Chopper Compass Challenge op de Veluwe"
+                width={1280}
                 height={1280}
                 className="w-full aspect-[4/5] object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-pink text-white border-2 border-ink p-5 rounded-2xl rotate-6 shadow-xl">
-              <div className="font-display text-2xl leading-none uppercase">Vanaf</div>
-              <div className="font-display text-4xl tracking-tighter">€9,50</div>
+              <div className="font-display text-xl leading-none uppercase">Vanaf</div>
+              <div className="font-display text-3xl tracking-tighter">2 pers.</div>
             </div>
           </div>
         </div>
@@ -110,7 +113,10 @@ function Home() {
                   </div>
                 </div>
                 <h3 className="text-2xl font-display font-bold uppercase mb-2">{a.name}</h3>
-                <p className="text-sm text-ink/70 mb-6">{a.short}</p>
+                <p className="text-sm text-ink/70 mb-3">{a.short}</p>
+                <p className="text-xs font-bold uppercase tracking-wide text-teal mb-6">
+                  {a.metaLine}
+                </p>
                 <span className="block w-full text-center border-2 border-ink rounded-full py-2 font-bold uppercase text-xs group-hover:bg-teal group-hover:text-cream transition-colors">
                   Meer Info
                 </span>
@@ -126,7 +132,7 @@ function Home() {
           <div className="flex-1 order-2 md:order-1">
             <div className="border-2 border-cream rounded-[2.5rem] overflow-hidden shadow-[12px_12px_0px_0px_var(--color-pink)]">
               <img
-                src={proeftuinImg}
+                src={proeftuinImg.url}
                 alt="De ProefTuin in Hoenderloo"
                 width={1280}
                 height={896}
@@ -144,9 +150,10 @@ function Home() {
               genieten
             </h2>
             <p className="text-lg mb-8 opacity-90 max-w-prose">
-              Na je challenge even helemaal tot rust komen? Onze Italiaanse keuken
-              serveert houtoven-pizza's, verse pasta en de lekkerste antipasti — midden
-              in het groen van Hoenderloo. De perfecte uitvalbasis voor elk avontuur.
+              Na je challenge even helemaal tot rust komen? Of starten met een volle maag? De
+              Italiaanse keuken van De ProefTuin serveert houtoven-pizza's, verse pasta en de
+              lekkerste antipasti — midden in het groen van Hoenderloo. De perfecte uitvalbasis
+              voor elk avontuur.
             </p>
             <ul className="space-y-4 mb-10">
               <li className="flex items-center gap-3">
@@ -165,10 +172,10 @@ function Home() {
               </li>
             </ul>
             <Link
-              to="/contact"
+              to="/arrangementen"
               className="inline-block bg-pink text-cream border-2 border-cream px-6 py-3 rounded-full font-bold uppercase tracking-widest hover:bg-coral transition-colors"
             >
-              Reserveer een tafel
+              Bekijk arrangementen
             </Link>
           </div>
         </div>
@@ -177,35 +184,34 @@ function Home() {
       {/* ARRANGEMENTEN CTA */}
       <section className="bg-coral py-20 border-y-2 border-ink overflow-hidden">
         <div className="flex whitespace-nowrap animate-marquee opacity-20">
-          <span className="text-7xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
-            Groepen 8+ Personen
+          <span className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
+            Uitjes 2 tot 100 personen
           </span>
-          <span className="text-7xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
+          <span className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
             Bedrijfsuitjes
           </span>
-          <span className="text-7xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
+          <span className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
             Familiedagen
           </span>
-          <span className="text-7xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
-            Groepen 8+ Personen
+          <span className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
+            Uitjes 2 tot 100 personen
           </span>
-          <span className="text-7xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
+          <span className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
             Bedrijfsuitjes
-          </span>
-          <span className="text-7xl md:text-8xl font-display font-bold uppercase tracking-tighter mx-4">
-            Familiedagen
           </span>
         </div>
-        <div className="max-w-4xl mx-auto text-center -mt-12 md:-mt-16 relative z-10 px-6">
-          <h2 className="text-5xl md:text-7xl font-display font-bold text-cream uppercase tracking-tighter mb-8">
-            Samen op{" "}
+        <div className="max-w-4xl mx-auto text-center -mt-10 md:-mt-16 relative z-10 px-6">
+          <h2 className="text-4xl md:text-6xl font-display font-bold text-cream uppercase tracking-tighter mb-8">
+            Uitjes van{" "}
             <span className="bg-ink text-white px-4 rounded-xl rotate-2 inline-block">
-              pad?
-            </span>
+              2 tot 100
+            </span>{" "}
+            personen
           </h2>
-          <p className="text-xl text-ink font-bold mb-10 max-w-2xl mx-auto">
-            Vanaf 8 personen maken we een arrangement op maat. Activiteit + diner +
-            drankjes — alles in één.
+          <p className="text-lg text-ink font-medium mb-10 max-w-2xl mx-auto">
+            Met een groepje tot 8 personen kun je de challenge direct reserveren. Een hapje eten bij
+            De ProefTuin? Reserveer dat zelf via hun website. Ben je met meer dan 8 personen? Kies
+            één van onze arrangementen en vraag een offerte op maat aan.
           </p>
           <Link
             to="/arrangementen"
@@ -215,6 +221,9 @@ function Home() {
           </Link>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQ kicker="Goed om te weten —" title="Veelgestelde vragen" faqs={homeFaqs} />
     </div>
   );
 }
