@@ -42,12 +42,31 @@ function ContactPage() {
           <div className="md:col-span-2 space-y-6">
             <div className="bg-teal text-cream border-2 border-ink rounded-3xl p-6 shadow-[8px_8px_0px_0px_var(--color-coral)]">
               <div className="text-xs uppercase tracking-widest font-bold opacity-80 mb-2">
-                Bezoekadres
+                Bezoekadres — De Proeftuin
               </div>
               <div className="font-display text-xl uppercase leading-tight">
-                De ProefTuin <br /> Hoenderloo
+                De Krim 4 <br /> 7351 BL Hoenderloo
               </div>
-              <div className="mt-2 text-sm opacity-90">Veluwe, Nederland</div>
+              <a
+                href="https://maps.google.com/?q=De+Krim+4,+7351+BL+Hoenderloo"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-block text-sm font-bold uppercase tracking-wide underline hover:text-pink"
+              >
+                Open in Maps →
+              </a>
+            </div>
+
+            <div className="bg-coral text-cream border-2 border-ink rounded-3xl p-6 shadow-[8px_8px_0px_0px_var(--color-teal)]">
+              <div className="text-xs uppercase tracking-widest font-bold opacity-80 mb-2">
+                Telefoon
+              </div>
+              <a
+                href="tel:+31318250999"
+                className="font-display text-2xl uppercase block hover:text-ink transition-colors"
+              >
+                0318 — 250 999
+              </a>
             </div>
 
             <div className="bg-white border-2 border-ink rounded-3xl p-6 shadow-[8px_8px_0px_0px_var(--color-pink)]">
@@ -56,21 +75,9 @@ function ContactPage() {
               </div>
               <a
                 href="mailto:info@spotveluwe.nl"
-                className="font-display text-xl uppercase block hover:text-coral transition-colors"
+                className="font-display text-xl uppercase block hover:text-coral transition-colors break-all"
               >
                 info@spotveluwe.nl
-              </a>
-            </div>
-
-            <div className="bg-coral text-cream border-2 border-ink rounded-3xl p-6 shadow-[8px_8px_0px_0px_var(--color-teal)]">
-              <div className="text-xs uppercase tracking-widest font-bold opacity-80 mb-2">
-                WhatsApp / Tel
-              </div>
-              <a
-                href="tel:+31000000000"
-                className="font-display text-xl uppercase block hover:text-ink transition-colors"
-              >
-                Bel ons direct
               </a>
             </div>
           </div>
