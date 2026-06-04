@@ -5,7 +5,7 @@ export type Faq = { q: string; a: string };
 export const homeFaqs: Faq[] = [
   {
     q: "Waar starten de activiteiten?",
-    a: "Alle challenges starten en eindigen bij De ProefTuin in Hoenderloo (De Krim 4, 7351 BL). Er is een parkeerplek voor ca. 50 auto's.",
+    a: "Alle challenges starten en eindigen bij De Proeftuin in Hoenderloo (De Krim 4, 7351 BL). Er is een parkeerplek voor ca. 50 auto's.",
   },
   {
     q: "Vanaf hoeveel personen kan ik boeken?",
@@ -13,7 +13,7 @@ export const homeFaqs: Faq[] = [
   },
   {
     q: "Kan ik eten en drinken combineren met een activiteit?",
-    a: "Zeker! De ProefTuin serveert Italiaanse pizza's uit de houtoven, verse pasta en antipasti. Voor groepen vanaf 8 personen bieden we complete arrangementen met BBQ, pizza buffet of lunch & borrel.",
+    a: "Zeker! De Proeftuin serveert Italiaanse pizza's uit de houtoven, verse pasta en antipasti. Voor groepen vanaf 8 personen bieden we complete arrangementen met BBQ, pizza buffet of lunch & borrel.",
   },
   {
     q: "Gaat het uitje ook door bij slecht weer?",
@@ -40,8 +40,8 @@ export const activityFaqs: Record<string, Faq[]> = {
       a: "Voor groepen tot 8 personen boek je direct via Eurowheelz (de partner voor de chopperverhuur). Vanaf 8 personen ga je via een arrangement op maat.",
     },
     {
-      q: "Krijg ik instructie?",
-      a: "Ja, je krijgt vooraf een korte instructie en een helm. Daarna kun je veilig op pad.",
+      q: "Krijg ik een helm?",
+      a: "Ja, een helm is bij de challenge inbegrepen.",
     },
   ],
   "auto-compass-challenge": [
@@ -51,7 +51,7 @@ export const activityFaqs: Record<string, Faq[]> = {
     },
     {
       q: "Kan de route op maat gemaakt worden?",
-      a: "Zeker. Voor groepen maken we de route in de vorm van een echte rally op maat, eventueel met finishboog, rally master op locatie en prijsuitreiking.",
+      a: "Zeker. Voor grote groepen maken we een autorally op maat met eigen opdrachten, score-overzicht, finishboog, rally master op locatie en prijsuitreiking.",
     },
     {
       q: "Kan ik in oldtimer kevers rijden?",
@@ -72,8 +72,8 @@ export const activityFaqs: Record<string, Faq[]> = {
       a: "Ja, vanaf ca. 8 jaar is de route goed te doen. Het is een mix van bospaden en verharde paden.",
     },
     {
-      q: "Kan ik dit combineren met een andere challenge?",
-      a: "Absoluut — de wandel challenge is heel leuk om te combineren met bijvoorbeeld lunch & een chopper- of autotour.",
+      q: "Kan ik dit combineren met eten of borrelen?",
+      a: "Absoluut — combineer de wandel challenge met een lunch, borrel of diner bij De Proeftuin om er een complete dag van te maken.",
     },
     {
       q: "Heb ik speciale uitrusting nodig?",

@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroChopper from "@/assets/hero-chopper.jpg.asset.json";
-import proeftuinImg from "@/assets/proeftuin.jpg.asset.json";
+import proeftuinTerras from "@/assets/proeftuin-terras.jpg.asset.json";
+import proeftuinGroep from "@/assets/proeftuin-groep.jpg.asset.json";
+import proeftuinTafel from "@/assets/proeftuin-tafel.jpg.asset.json";
 import { activities } from "@/lib/activities";
 import { FAQ } from "@/components/FAQ";
 import { homeFaqs } from "@/lib/faqs";
@@ -128,22 +130,42 @@ function Home() {
 
       {/* PROEFTUIN */}
       <section id="proeftuin" className="bg-teal text-cream py-24 px-6 scroll-mt-24">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-          <div className="flex-1 order-2 md:order-1">
-            <div className="border-2 border-cream rounded-[2.5rem] overflow-hidden shadow-[12px_12px_0px_0px_var(--color-pink)]">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="border-2 border-cream rounded-3xl overflow-hidden shadow-[8px_8px_0px_0px_var(--color-pink)] col-span-2">
               <img
-                src={proeftuinImg.url}
-                alt="De ProefTuin in Hoenderloo"
+                src={proeftuinTerras.url}
+                alt="Het terras en de serre van De Proeftuin in Hoenderloo"
                 width={1280}
-                height={896}
+                height={853}
                 loading="lazy"
                 className="w-full aspect-[3/2] object-cover"
               />
             </div>
+            <div className="border-2 border-cream rounded-2xl overflow-hidden">
+              <img
+                src={proeftuinGroep.url}
+                alt="Groep proost met wijn aan tafel bij De Proeftuin"
+                width={800}
+                height={534}
+                loading="lazy"
+                className="w-full aspect-square object-cover"
+              />
+            </div>
+            <div className="border-2 border-cream rounded-2xl overflow-hidden">
+              <img
+                src={proeftuinTafel.url}
+                alt="Italiaanse shared dining tafel bij De Proeftuin"
+                width={800}
+                height={534}
+                loading="lazy"
+                className="w-full aspect-square object-cover"
+              />
+            </div>
           </div>
-          <div className="flex-1 order-1 md:order-2">
+          <div>
             <h2 className="text-4xl md:text-5xl font-display font-bold uppercase leading-none mb-6">
-              De ProefTuin{" "}
+              De Proeftuin{" "}
               <span className="font-serif italic font-normal lowercase text-pink">
                 Italiaans
               </span>{" "}
@@ -151,7 +173,7 @@ function Home() {
             </h2>
             <p className="text-lg mb-8 opacity-90 max-w-prose">
               Na je challenge even helemaal tot rust komen? Of starten met een volle maag? De
-              Italiaanse keuken van De ProefTuin serveert houtoven-pizza's, verse pasta en de
+              Italiaanse keuken van De Proeftuin serveert houtoven-pizza's, verse pasta en de
               lekkerste antipasti — midden in het groen van Hoenderloo. De perfecte uitvalbasis
               voor elk avontuur.
             </p>
@@ -209,9 +231,9 @@ function Home() {
             personen
           </h2>
           <p className="text-lg text-ink font-medium mb-10 max-w-2xl mx-auto">
-            Met een groepje tot 8 personen kun je de challenge direct reserveren. Een hapje eten bij
-            De ProefTuin? Reserveer dat zelf via hun website. Ben je met meer dan 8 personen? Kies
-            één van onze arrangementen en vraag een offerte op maat aan.
+            Met een groepje tot 8 personen boek je de challenge direct online. Vanaf 8 personen
+            kies je één van onze arrangementen — challenge + eten bij De Proeftuin — en vragen we
+            een offerte op maat voor je samen.
           </p>
           <Link
             to="/arrangementen"

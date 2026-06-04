@@ -6,11 +6,12 @@ export function SiteFooter() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
         <div>
           <span className="text-4xl font-display font-bold uppercase tracking-tighter leading-none block">
-            Spot de <br /> Veluwe
+            Spot<span className="font-serif italic lowercase text-coral">veluwe</span>
           </span>
-          <p className="mt-4 font-script text-2xl text-coral">Hoenderloo, De Veluwe</p>
+          <p className="mt-4 font-script text-2xl text-coral">De Proeftuin, Hoenderloo</p>
           <p className="mt-2 text-sm text-ink/70 max-w-xs">
-            Avontuurlijke uitjes en arrangementen vanaf De ProefTuin in Hoenderloo.
+            De Krim 4, 7351 BL Hoenderloo<br />
+            T: <a href="tel:+31318250999" className="hover:text-coral">0318-250999</a>
           </p>
         </div>
         <div className="grid grid-cols-2 gap-12">
@@ -30,7 +31,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="max-w-6xl mx-auto mt-12 pt-6 border-t-2 border-ink/10 flex justify-between items-center text-[10px] font-bold uppercase opacity-50">
-        <span>© {new Date().getFullYear()} Spot de Veluwe</span>
+        <span>© {new Date().getFullYear()} Spotveluwe</span>
         <span>Avontuur op de Veluwe</span>
       </div>
     </footer>

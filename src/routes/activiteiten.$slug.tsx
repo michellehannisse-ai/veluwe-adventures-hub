@@ -40,7 +40,7 @@ function ActivityDetail() {
 
   return (
     <>
-      <div className="pt-32 pb-24 px-6 bg-cream">
+      <div className="pt-32 pb-20 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <Link
             to="/activiteiten"
@@ -49,7 +49,8 @@ function ActivityDetail() {
             ← Alle activiteiten
           </Link>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Header */}
+          <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
             <div className="relative">
               <div className="border-2 border-ink rounded-[2rem] overflow-hidden shadow-[12px_12px_0px_0px_var(--color-coral)]">
                 <img
@@ -70,24 +71,6 @@ function ActivityDetail() {
                   <div className="text-xs font-bold uppercase tracking-widest">{a.priceLabel}</div>
                 </div>
               )}
-
-              {a.gallery && a.gallery.length > 0 && (
-                <div className="grid grid-cols-2 gap-3 mt-4">
-                  {a.gallery.map((g: string, i: number) => (
-                    <div
-                      key={i}
-                      className="border-2 border-ink rounded-2xl overflow-hidden"
-                    >
-                      <img
-                        src={g}
-                        alt=""
-                        loading="lazy"
-                        className="w-full aspect-[4/3] object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
 
             <div>
@@ -95,28 +78,7 @@ function ActivityDetail() {
               <h1 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter leading-none mt-1 mb-6">
                 {a.name}
               </h1>
-              <p className="text-lg text-ink/80 mb-8">{a.description}</p>
-
-              <div className="grid grid-cols-2 gap-3 mb-8">
-                {a.practical.map((p: { label: string; value: string }) => (
-                  <div key={p.label} className="border-2 border-ink rounded-2xl p-4">
-                    <div className="text-xs font-bold uppercase text-ink/50">{p.label}</div>
-                    <div className="font-display text-lg uppercase leading-tight">{p.value}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mb-10">
-                <h2 className="text-xl font-display font-bold uppercase mb-4">Wat je krijgt</h2>
-                <ul className="space-y-3">
-                  {a.highlights.map((h: string) => (
-                    <li key={h} className="flex items-start gap-3">
-                      <span className="size-3 mt-2 rounded-full bg-coral border border-ink" />
-                      <span className="font-medium">{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="text-lg text-ink/80 mb-6 whitespace-pre-line">{a.description}</p>
 
               <div className="flex flex-wrap gap-3">
                 {a.primaryCta.external ? (
@@ -147,6 +109,51 @@ function ActivityDetail() {
               </div>
             </div>
           </div>
+
+          {/* Full-width info row: practical + highlights + gallery */}
+          <div className="grid md:grid-cols-3 gap-6 mb-4">
+            <div className="md:col-span-1 bg-white border-2 border-ink rounded-2xl p-6">
+              <h2 className="text-lg font-display font-bold uppercase mb-4">Praktisch</h2>
+              <ul className="space-y-3">
+                {a.practical.map((p: { label: string; value: string }) => (
+                  <li key={p.label} className="flex justify-between gap-3 text-sm border-b border-ink/10 pb-2 last:border-0">
+                    <span className="text-xs font-bold uppercase text-ink/50">{p.label}</span>
+                    <span className="font-display uppercase text-right">{p.value}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="md:col-span-2 bg-white border-2 border-ink rounded-2xl p-6">
+              <h2 className="text-lg font-display font-bold uppercase mb-4">Wat je krijgt</h2>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                {a.highlights.map((h: string) => (
+                  <li key={h} className="flex items-start gap-3">
+                    <span className="size-3 mt-1.5 rounded-full bg-coral border border-ink shrink-0" />
+                    <span className="font-medium text-sm">{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {a.gallery && a.gallery.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+              {a.gallery.map((g: string, i: number) => (
+                <div
+                  key={i}
+                  className="border-2 border-ink rounded-2xl overflow-hidden"
+                >
+                  <img
+                    src={g}
+                    alt={`${a.name} sfeerfoto ${i + 1}`}
+                    loading="lazy"
+                    className="w-full aspect-[4/3] object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

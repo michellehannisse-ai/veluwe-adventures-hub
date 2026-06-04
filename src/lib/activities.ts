@@ -1,4 +1,6 @@
 import chopperImg from "@/assets/activity-chopper.jpg.asset.json";
+import chopperGroep from "@/assets/chopper-groep.jpg.asset.json";
+import chopperTwee from "@/assets/chopper-twee.jpg.asset.json";
 import autoImg from "@/assets/activity-auto.jpg.asset.json";
 import autoInCar from "@/assets/auto-incar.jpg.asset.json";
 import autoLaan from "@/assets/auto-laan.jpg.asset.json";
@@ -40,12 +42,12 @@ export const activities: Activity[] = [
     duration: "2,5 uur",
     groupSize: "2–50 personen",
     description:
-      "De ultieme manier om de Veluwe te ontdekken. Stap op een stoere elektrische chopper en ga met je team op zoek naar verborgen checkpoints. Met een kompas en een kaart in de app vind je je weg door bossen, heide en dorpjes. Geruisloos, krachtig en gegarandeerd één groot avontuur. Teambuilding gegarandeerd, want er zitten diverse leuke opdrachten in de route verwerkt.",
+      "De ultieme manier om de Veluwe te ontdekken. Stap op een stoere elektrische chopper en ga met je team op zoek naar verborgen checkpoints. Met een kompas en een kaart in de app vind je je weg door bossen, heide en dorpjes. Geruisloos, krachtig en gegarandeerd één groot avontuur. Teambuilding verzekerd, want er zitten diverse leuke opdrachten in de route verwerkt.",
     highlights: [
       "Stoere elektrische choppers",
       "Navigatie met kompas in de app",
       "Leuke teamopdrachten onderweg",
-      "Inclusief instructie en helm",
+      "Inclusief helm",
     ],
     practical: [
       { label: "Start", value: "11:30 of 15:00 uur" },
@@ -55,6 +57,7 @@ export const activities: Activity[] = [
       { label: "Extra", value: "Lunchpakket +€15 p.p." },
     ],
     image: chopperImg.url,
+    gallery: [chopperGroep.url, chopperTwee.url],
     shadowColor: "#1A1A1A",
     badgeBg: "bg-teal",
     badgeText: "text-cream",
@@ -70,19 +73,19 @@ export const activities: Activity[] = [
     name: "Auto Compass Challenge",
     short:
       "Lekker touren met een autopuzzeltocht over de Veluwe. Een echte rally langs de leukste hotspots.",
-    metaLine: "2–100+ personen · 2,5 uur · Eigen auto of bij te huren",
+    metaLine: "2–100+ personen · 3 tot 4 uur · Eigen auto of bij te huren",
     price: "€29,50",
     priceLabel: "per auto",
     showPrice: false,
     duration: "3 tot 4 uur",
     groupSize: "2–100+ personen",
     description:
-      "Een echte rally over de Veluwe! Ontdek de meest verrassende hotspots, leuke restaurants en wees er zeker van dat het uitje altijd kan doorgaan — ook met regen. Een route van ca. 60 kilometer via de mooiste weggetjes, langs de leukste plekken. Mogelijk met je eigen auto of huur er één bij. Voor groepen maken we de route op maat als rally, en we kunnen het uitbreiden met finishboog, rally master op locatie, prijsuitreiking en zelfs oldtimer kevers.",
+      "Een echte rally over de Veluwe! Ontdek de meest verrassende hotspots, leuke restaurants en wees er zeker van dat het uitje altijd kan doorgaan — ook met regen. Een route van ca. 60 kilometer via de mooiste weggetjes, langs de leukste plekken. Mogelijk met je eigen auto of huur er één bij. Voor grote groepen is het mogelijk een autorally op maat te ontwikkelen, met eigen opdrachten, score-overzicht, finishboog, rally master op locatie en prijsuitreiking. Maatwerk is mogelijk.",
     highlights: [
-      "Rally over de Veluwe op maat",
+      "Gave rally over de meest indrukwekkende wegen van de Veluwe",
       "Route ca. 60 km langs hotspots",
       "Eigen auto of bij te huren",
-      "Uit te breiden met finishboog, rally master & prijsuitreiking",
+      "Maatwerk is mogelijk (eigen opdrachten & score-overzicht)",
       "Oldtimer kevers boekbaar",
       "Altijd doorgang — ook bij regen",
     ],
@@ -98,7 +101,12 @@ export const activities: Activity[] = [
     shadowColor: "#E84A8A",
     badgeBg: "bg-coral",
     badgeText: "text-white",
-    primaryCta: { label: "Offerte aanvragen", href: "/contact" },
+    primaryCta: {
+      label: "Direct boeken",
+      href: "https://rlly.nl/product/autospeurtocht-veluwe-uitje-veluwe/",
+      external: true,
+    },
+    secondaryCta: { label: "Of als arrangement →", href: "/arrangementen" },
   },
   {
     slug: "wandel-compass-challenge",
@@ -112,13 +120,13 @@ export const activities: Activity[] = [
     duration: "2,5 uur",
     groupSize: "2–100+ personen",
     description:
-      "De moderne versie van de gps-wandeltocht! Ga de natuur in, navigeer met het kompas en ontdek de coördinaten. Maak leuke opdrachten onderweg en leer meer over de omgeving. De Wandel Compass Challenge is ca. 7 tot 9 kilometer lang en een combinatie van bospaden en verharde paden. Leuk om te combineren met een andere challenge!",
+      "De moderne versie van de gps-wandeltocht! Ga de natuur in, navigeer met het kompas en ontdek de coördinaten. Maak leuke opdrachten onderweg en leer meer over de omgeving. De Wandel Compass Challenge is ca. 7 tot 9 kilometer lang en een combinatie van bospaden en verharde paden. Combineer eventueel met een lekkere lunch, borrel of diner bij De Proeftuin om er een complete dag van te maken.",
     highlights: [
       "Navigatie met kompas in de app",
       "7 tot 9 km natuurroute",
       "Mix bospaden en verharde paden",
       "Leerzame opdrachten onderweg",
-      "Combineer met chopper of auto",
+      "Combineer eventueel met lunch, borrel of diner",
     ],
     practical: [
       { label: "Duur", value: "± 2,5 uur" },
