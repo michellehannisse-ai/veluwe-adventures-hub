@@ -75,43 +75,58 @@ function ArrangementDetail() {
               {arr.name}
             </h1>
             <p className="text-xl font-serif italic text-ink/70 mb-6">{arr.tagline}</p>
-            <p className="text-lg text-ink/80 mb-8">{arr.description}</p>
+            <p className="text-base text-ink/80 mb-6 whitespace-pre-line">{arr.description}</p>
 
-            <div className="bg-white border-2 border-ink rounded-2xl p-6 mb-6">
-              <h2 className="text-xl font-display font-bold uppercase mb-4">Inbegrepen</h2>
-              <ul className="space-y-3">
-                {arr.includes.map((h: string) => (
-                  <li key={h} className="flex items-start gap-3">
-                    <span className="size-3 mt-2 rounded-full bg-pink border border-ink" />
-                    <span className="font-medium">{h}</span>
+            <Link
+              to="/contact"
+              className="inline-block bg-teal text-cream border-2 border-ink px-6 py-3 rounded-full font-bold uppercase shadow-[6px_6px_0px_0px_var(--color-ink)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_var(--color-ink)] transition-all"
+            >
+              Offerte aanvragen
+            </Link>
+          </div>
+        </div>
+
+        {/* Info grid */}
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="bg-white border-2 border-ink rounded-2xl p-6">
+            <h2 className="text-lg font-display font-bold uppercase mb-4">Inbegrepen</h2>
+            <ul className="space-y-2 text-sm">
+              {arr.includes.map((h: string) => (
+                <li key={h} className="flex items-start gap-2">
+                  <span className="size-2 mt-1.5 rounded-full bg-pink border border-ink shrink-0" />
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {arr.options && arr.options.length > 0 && (
+            <div className="bg-cream border-2 border-ink rounded-2xl p-6">
+              <h2 className="text-lg font-display font-bold uppercase mb-4">Opties & extra's</h2>
+              <ul className="space-y-2 text-sm">
+                {arr.options.map((o: string) => (
+                  <li key={o} className="flex items-start gap-2">
+                    <span className="size-2 mt-1.5 rounded-full bg-coral border border-ink shrink-0" />
+                    <span>{o}</span>
                   </li>
                 ))}
               </ul>
             </div>
+          )}
 
-            {arr.options && arr.options.length > 0 && (
-              <div className="bg-cream border-2 border-ink rounded-2xl p-6 mb-8">
-                <h2 className="text-xl font-display font-bold uppercase mb-4">Opties & extra's</h2>
-                <ul className="space-y-2 text-sm">
-                  {arr.options.map((o: string) => (
-                    <li key={o} className="flex items-start gap-2">
-                      <span className="size-2 mt-1.5 rounded-full bg-coral border border-ink shrink-0" />
-                      <span>{o}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="bg-teal text-cream border-2 border-ink px-6 py-3 rounded-full font-bold uppercase shadow-[6px_6px_0px_0px_var(--color-ink)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_var(--color-ink)] transition-all"
-              >
-                Offerte aanvragen
-              </Link>
+          {arr.planning && arr.planning.length > 0 && (
+            <div className="bg-teal text-cream border-2 border-ink rounded-2xl p-6">
+              <h2 className="text-lg font-display font-bold uppercase mb-4">Voorbeeld planning</h2>
+              <ul className="space-y-2 text-sm">
+                {arr.planning.map((p: string) => (
+                  <li key={p} className="flex items-start gap-2">
+                    <span className="size-2 mt-1.5 rounded-full bg-pink border border-cream shrink-0" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="mt-24">
