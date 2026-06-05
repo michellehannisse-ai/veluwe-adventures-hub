@@ -24,14 +24,13 @@ const challengeNote =
 
 export const arrangementen: Arrangement[] = [
   {
-    slug: "tour-en-bbq",
-    name: "Tour & BBQ",
+    slug: "challenge-en-bbq",
+    name: "Challenge & BBQ",
     tagline: "Combineer met een leuke challenge + Italiaanse BBQ bij De Proeftuin",
-    price: "v.a. €30 p.p. (BBQ, excl. challenge)",
+    price: "+ €30 p.p. (excl. drank)",
     includes: [
       "Goed gevulde salades, gemarineerde krieltjes, vers brood en sauzen",
       "Ready-to-use houtskool BBQ",
-      "Diverse pakketten van Standaard tot Surf & Turf",
       "Ook in herfst & winter mogelijk met vuurschalen en safaritent",
     ],
     options: [
@@ -46,17 +45,17 @@ export const arrangementen: Arrangement[] = [
       "17:30 – 20:00  BBQ bij De Proeftuin",
     ],
     description:
-      "Het uitje voor echte fijnproevers. Eerst de Veluwe veroveren met een challenge, daarna gezellig aanschuiven voor een uitgebreide BBQ bij De Proeftuin. Kies zelf het BBQ-pakket dat bij je groep past: van Standaard tot Luxe vis of Surf & Turf. Zelf de touwtjes in handen — een kok is niet inbegrepen.\n\nBBQ'en met een groep is altijd een goed idee. De mediterrane BBQ bij De Proeftuin geeft hier een verrassende invulling aan met smaakvolle bereidingen van vis, vlees en groenten, aangevuld met ciabatta, focaccia's, verse salades en sauzen. Er wordt zelf gebarbecued op houtskool, zodat iedereen kan genieten op z'n eigen tempo.\n\nOok in de herfst en winter is barbecueën mogelijk. Met vuurschalen en een gezellige safaritent wordt het een warme en sfeervolle ervaring.\n\n" +
+      "BBQ'en met een groep is altijd een goed idee. De mediterrane BBQ bij De Proeftuin geeft hier een verrassende invulling aan met smaakvolle bereidingen van vis, vlees en groenten, aangevuld met ciabatta, focaccia's, verse salades en sauzen. Er wordt zelf gebarbecued op houtskool, zodat iedereen kan genieten op z'n eigen tempo.\n\nOok in de herfst en winter is barbecueën mogelijk. Met vuurschalen en een gezellige safaritent wordt het een warme en sfeervolle ervaring.\n\n" +
       challengeNote,
     image: bbqImg.url,
     gallery: [bbqBuiten.url],
     accent: "teal",
   },
   {
-    slug: "tour-en-pizza-buffet",
-    name: "Tour & Pizza Buffet",
-    tagline: "Combineer met een leuke challenge + onbeperkt pizza uit de houtoven",
-    price: "v.a. €24,50 p.p. (pizza buffet, excl. challenge)",
+    slug: "challenge-en-pizza-buffet",
+    name: "Challenge & Pizza buffet",
+    tagline: "Combineer met een leuke challenge + heerlijke pizza's uit de houtoven",
+    price: "+ €27,50 p.p. (excl. drank)",
     includes: [
       "Vers vegetarisch soepje vooraf",
       "Onbeperkt pizza uit de houtgestookte oven (vlees, vis of vegetarisch)",
@@ -71,7 +70,7 @@ export const arrangementen: Arrangement[] = [
     planning: [
       "15:00 – 17:30  Chopper of Wandel Compass Challenge",
       "of 14:30 – 17:30  Auto Compass Challenge",
-      "17:30 – 20:00  Pizza buffet bij De Proeftuin",
+      "17:30 – 19:00  Pizza buffet bij De Proeftuin",
     ],
     description:
       "Ga eerst samen op pad tijdens een verrassende en interactieve activiteit en ontdek de omgeving op een speelse manier. In teams ga je de uitdaging aan, vol opdrachten, competitie en plezier.\n\nDaarna schuif je aan bij De Proeftuin voor een gezellige afsluiting met een pizza shared dining diner. Vers uit de houtgestookte oven worden verschillende pizza's geserveerd om samen te delen — de perfecte manier om na te praten en de dag smaakvol af te ronden.\n\nWist je dat De Proeftuin in 2025 een prachtige 4e plaats op het NK Pizzabakken behaalde, tijdens de Horecava in Amsterdam? Pizzabakker Kostaq behoort hiermee tot de absolute Nederlandse top!\n\n" +
@@ -81,29 +80,27 @@ export const arrangementen: Arrangement[] = [
     accent: "coral",
   },
   {
-    slug: "lunch-challenge-en-borrel",
-    name: "Lunch, Challenge & Borrel",
-    tagline: "Combineer met een leuke challenge + Italiaanse lunch en gezellige borrel",
-    price: "v.a. €26,50 p.p. (lunch, excl. challenge & borrel)",
+    slug: "lunch-en-challenge",
+    name: "Lunch & Challenge",
+    tagline: "Italiaanse lunch vooraf + een leuke challenge op de Veluwe",
+    price: "+ €26,50 p.p. (excl. drank en diner)",
     includes: [
       "Italiaanse lunch met huisgemaakte broodjes (vlees, vis, vegetarisch)",
       "Vers gebakken croissants, fruit, salades en soep",
-      "Optionele borrelafkoop bij terugkomst",
-      "Gezellig naborrelen op het Veluwse terras",
+      "Optionele drankafkoop bij de lunch",
     ],
     options: [
       "Drank afkoop lunch (2 uur): €11,50 p.p.",
-      "Borrel afkoop 3 uur: €22,50 p.p. (extra uur €5 p.p., tot 18 jr €12,50 p.p.)",
       "Kindertarief lunch (4–12 jr): €15 p.p.",
     ],
     planning: [
-      "11:30 – 13:00  Italiaanse lunch bij De Proeftuin",
-      "13:30 – 16:00  Chopper of Wandel Compass Challenge",
-      "of 13:00 – 16:30  Auto Compass Challenge",
-      "16:30 – 19:30  Borrel op het terras",
+      "12:00 – 13:30  Italiaanse lunch bij De Proeftuin",
+      "14:00 – 16:30  Chopper of Wandel Compass Challenge",
+      "of 13:30 – 17:00  Auto Compass Challenge",
+      "Optioneel napraten met een hapje & drankje op het terras",
     ],
     description:
-      "Perfect voor een complete dag uit. Start gezellig met een uitgebreide Italiaanse lunch — precies zoals de Italianen het doen. Daarna actief de Veluwe in met een challenge naar keuze. En bij terugkomst nog even napraten onder het genot van een drankje op het Veluwse terras.\n\n" +
+      "Begin de middag met een uitgebreide, late lunch. Net zoals de Italianen altijd doen, de belangrijkste maaltijd van de dag!\n\nNa de uitgebreide lunch begint de activiteit, lekker touren in de omgeving. Maak opdrachten, verken nieuwe hotspots & ga voor de hoogste score. Of geniet gewoon van de omgeving.\n\nNa de activiteit is het mogelijk om nog lekker te dineren bij de Proeftuin. Een hapje met een drankje, de dag bespreken. En dat in het zonnetje, op het verwarmde terras of het restaurant. Klinkt als een geslaagde middag, niet?\n\nLiever alleen een activiteit met lunch of juist alleen met diner boeken, dan is dat ook mogelijk.\n\n" +
       challengeNote,
     image: lunchImg.url,
     gallery: [proeftuinGroep.url],
