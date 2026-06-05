@@ -74,6 +74,33 @@ function Home() {
         </div>
       </section>
 
+      {/* USP MARQUEE BAR */}
+      <section
+        aria-label="Onze pluspunten"
+        className="bg-coral text-cream border-y-2 border-ink py-4 overflow-hidden"
+      >
+        <div className="flex whitespace-nowrap animate-marquee">
+          {Array.from({ length: 2 }).map((_, dup) => (
+            <div key={dup} className="flex items-center shrink-0">
+              {[
+                "Midden op de Veluwe",
+                "Boek een compleet uitje",
+                "Voor iedereen wat leuks",
+                "Genoeg parkeergelegenheid",
+                "Vanaf 2 personen",
+              ].map((usp) => (
+                <span key={`${dup}-${usp}`} className="flex items-center shrink-0">
+                  <span className="font-display font-bold uppercase tracking-tight text-xl md:text-2xl mx-6">
+                    {usp}
+                  </span>
+                  <span className="size-3 rounded-full bg-cream border-2 border-ink shrink-0" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ACTIVITIES */}
       <section id="activiteiten" className="bg-cream py-24 px-6 border-t-2 border-ink">
         <div className="max-w-6xl mx-auto">
