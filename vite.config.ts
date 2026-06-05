@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Outside the Lovable sandbox (e.g. Vercel CI), build with the Vercel Nitro preset
+  // so output lands in .vercel/output/ for Vercel's Build Output API.
+  // Inside Lovable the wrapper forces cloudflare-module, so the editor preview is unaffected.
+  nitro: { preset: "vercel" },
 });
